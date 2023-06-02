@@ -22,7 +22,7 @@ class LayerChatBase(LayerBase):
             replay_data if replay_data else self._renderer.replay_data
         )
         self._font = self._renderer.resman.load_font(
-            filename="warhelios_bold_multilingual.ttf", size=12
+            filename="warhelios_bold_multilingual.ttf", size=16
         )
         self._players = self._replay_data.player_info
         self._generated_lines: dict[int, Image.Image] = {}
@@ -65,7 +65,7 @@ class LayerChatBase(LayerBase):
         # if image := self._lines.get(m_hash, None):
         #     return image
 
-        base = Image.new("RGBA", (560, 17))
+        base = Image.new("RGBA", (560, 26))
         draw = ImageDraw.Draw(base)
         player = self._players[message.player_id]
 
